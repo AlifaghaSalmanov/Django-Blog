@@ -84,7 +84,7 @@ def articles(request):
         context = {"articles": articles}
         return render(request, "articles.html", context)
 
-    articles = Article.objects.all()
+    articles = Article.objects.all().order_by('-created_date')
     context = {"articles": articles}
     return render(request, "articles.html", context)
 
